@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- https://tailwindcomponents.com/component/login-modal-1 -->
+<div class="relative md:mx-auto w-1/2 lg:w-1/4 z-20">
+    <div class="shadow-lg bg-white rounded-lg p-8">
+            <h1 class="text-center text-2xl text-green-500">Login</h1>
+
+            <form class="pt-6 pb-2 my-2" action="/registerlogin" method="post">
+            <div class="mb-4">
+                <label class="block text-sm font-bold mb-2" for="email">
+                Username
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-500" name="username" id="username" type="text" placeholder="Username" />
+            </div>
+            <div class="mb-6">
+                <label class="block text-sm font-bold mb-2" for="password">
+                Password
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-500 mb-3" name="password" id="password" type="password" placeholder="Password" />
+            </div>
+            <div class="block md:flex items-center justify-between">
+                <div>
+                <button class="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded border-b-4 border-green-500" id="login" type="submit" >
+                    Login / Register
+                </button>
+                </div>
+
+            </div>
+            </form>
+        </div>
+        <div class=" mt-5 grid grid-cols-3 grid-rows-7 grid-flow-row overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                
+
+                <div class="col-span-3 row-span-1">
+                    <header class="flex flex-rows items-center justify-between text-gray-400 leading-tight p-2 text-sm ">
+                        Demo version: <br> will only process screenshots for  http://cscg.de
+                    </header>
+                </div>
+            </div>
+    </div>
+    <div class="w-96 m-auto my-5">
+            
+        </div>
+</div>
+
+
+{% endblock %}

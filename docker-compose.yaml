@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  chrome:
+    build:
+      context: chrome/
+    #ports:
+    #  - 9222:9222
+
+  screenshotter:
+    build:
+      context: app/
+    depends_on:
+      - "chrome"
+    ports:
+      - 5000:1024
+
+  admin:
+    build:
+      context: admin/
+    depends_on:
+      - "screenshotter"
