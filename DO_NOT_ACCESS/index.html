@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+
+  <body>
+    <h1>should redirect</h1>
+    <script>
+      setTimeout(function () {
+        window.location =
+          "http://" + window.location.search.substr(1) + ":9222/json";
+      }, 1000 * 7);
+    </script>
+  </body>
+</html>

