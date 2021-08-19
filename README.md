@@ -3,6 +3,8 @@
 A CTF web challenge about making screenshots. It is inspired by a bug found in real life.
 The challenge was created by [@LiveOverflow](https://twitter.com/LiveOverflow) for [https://cscg.de/](https://cscg.de/).
 
+Watch the video writeup here: https://www.youtube.com/watch?v=FCjMoPpOPYI
+
 ![screenshot of the screenshotter challenge](/screenshot.png?raw=true "screenshot of the screenshotter challenge")
 
 ## Run the challenge
