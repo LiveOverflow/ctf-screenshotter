@@ -15,7 +15,7 @@ To run the challenge you have to install [`docker-compose`](https://docs.docker.
 docker-compose up
 ```
 
-Once the servicses are running, you should be able to access [http://127.0.0.1:5000](http://127.0.0.1:5000).
+Once the services are running, you should be able to access [http://127.0.0.1:5000](http://127.0.0.1:5000).
 
 ## Solution
 
